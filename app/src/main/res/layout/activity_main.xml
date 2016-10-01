@@ -8,17 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.chrisbennett.mylistview.MainActivity"
-    android:background="#e28585">
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Splash!"
-        android:layout_alignParentEnd="true"
-        android:fontFamily="Georgia"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:id="@+id/textView" />
+    android:background="@android:color/holo_red_light">
 
     <Button
         android:layout_width="wrap_content"
@@ -39,4 +29,15 @@
         android:layout_alignStart="@+id/btnView"
         android:layout_marginTop="88dp"
         android:onClick="addRecord" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Resource Reviews!"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 </RelativeLayout>

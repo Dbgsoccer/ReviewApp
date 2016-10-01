@@ -7,47 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.chrisbennett.mylistview.AddRecord">
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtReviewer"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtTitle"
-        android:layout_below="@+id/txtReviewer"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtRating"
-        android:layout_below="@+id/txtTitle"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/txtReview"
-        android:layout_below="@+id/txtRating"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Review"
-        android:id="@+id/btnAdd"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="101dp"
-        android:onClick="insertRecord" />
+    tools:context="com.example.chrisbennett.mylistview.AddRecord"
+    android:background="@android:color/holo_red_light">
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,5 +16,79 @@
         android:id="@+id/txtSuccess"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Review"
+        android:id="@+id/btnAdd"
+        android:layout_marginBottom="14dp"
+        android:onClick="insertRecord"
+        android:layout_above="@+id/txtSuccess"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="112dp" />
+
+    <TextView
+        android:text="Review:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:text="Reviewer:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtReview"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView3" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtReviewer"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/txtReview"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Title:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtReviewer"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView4"
+        android:layout_alignEnd="@+id/textView2" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTitle"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Rating:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/txtTitle"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtRating"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
