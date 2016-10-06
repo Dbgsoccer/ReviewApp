@@ -46,30 +46,24 @@ public class SummaryView extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     Cursor c = db.rawQuery("SELECT * FROM " + ReviewSchema.Review.TABLE_NAME + " WHERE " + ReviewSchema.Review.COLUMN_NAME_REVIEWER + " LIKE '%Derek%'", null);
+                    //Need to change this to a getActivity() in order to update listview
+                    ReviewCursorAdapter adapter = new ReviewCursorAdapter(buttonView.getContext(), c);
+                    ListView listview = (ListView) findViewById(R.id.listView);
 
+                    listview.setAdapter(adapter);
                     // The toggle is enabled
                 } else {
                     Cursor c = db.rawQuery("SELECT * FROM " + ReviewSchema.Review.TABLE_NAME, null);
+                    ReviewCursorAdapter adapter = new ReviewCursorAdapter(buttonView.getContext(), c);
+                    ListView listview = (ListView) findViewById(R.id.listView);
+
+                    listview.setAdapter(adapter);
                     // The toggle is disabled
                 }
             }
         });
 
-
-        ReviewCursorAdapter adapter = new ReviewCursorAdapter(this, c);
-        /*
-        ArrayList <String> records = new ArrayList<String>();
-        for(int i=0;i<Data.names.length;i++) {
-            records.add(Data.names[i] + "," + Data.ages[i] + "," + Data.secrets[i]);
-        }
-        ItemAdapter adapter = new ItemAdapter(this,records);
-*/
-
         ListView listview = (ListView) findViewById(R.id.listView);
-
-        listview.setAdapter(adapter);
-
-
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -82,8 +76,6 @@ public class SummaryView extends AppCompatActivity {
                 //start activity
                 startActivity(intent);
             }
-
-
         });
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
